@@ -45,10 +45,36 @@ namespace LinkedListSimple
                 temp.Next = node;
             }
             Console.WriteLine("After Appending element to lastly added element  : {0}", data);
-
-
         }
 
+
+        //Insert method takes two parameters to insert element in between the Node
+
+        public Node Insert(int lastNode, Node NewData)
+        {
+            Node temp = head;
+
+            //while loop to check if our temp is null then it return head
+            //else it goes to another while loop
+
+            while (temp != null)
+            {
+                while (temp.data == lastNode)
+                {
+
+                    Node newnode = temp.Next;
+                    //store NewData to temp.Next
+
+                    temp.Next = NewData;
+
+                    temp.Next.Next = newnode;
+                    break;
+                }
+                temp = temp.Next;
+            }
+            return head;
+
+        }
         //Display Method is Used to Display elements
 
         public void Display()

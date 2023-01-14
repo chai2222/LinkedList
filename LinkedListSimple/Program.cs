@@ -13,7 +13,8 @@
             {
                 Console.WriteLine("Please Select options :\n" +
                     "1)Elements Added in the Linked List using Add Method\n" +
-                    "2)Elements Appended in the linked List to Last using Append Method\n");
+                    "2)Elements Appended in the linked List to Last using Append Method\n" +
+                    "3)Element Inserted At a Particular Position Using Insert \n");
 
                 int option = Convert.ToInt32(Console.ReadLine());
 
@@ -48,7 +49,22 @@
                         Console.WriteLine(":::::::::::::::::::::::::::::::::::::::");
 
                         break;
+                    case 3:
 
+                        Console.WriteLine(":::::::::::::::::::::::::::::::::::::::");
+                        Console.WriteLine("Adding Elements as follows :");
+                        LinkedListData list2 = new LinkedListData();
+                        list2.Add(56);
+                        list2.Add(70);
+                        //creating object of Node class and passing data 
+                        Node node = new Node(30);
+                        Console.WriteLine("Element inserted in between the list: {0}", node.data);
+                        Console.WriteLine("So After inserting the Final list appears as :");
+                        Console.WriteLine(":::::::::::::::::::::::::::::::::::::::");
+                        list2.Insert(56, node);
+                        list2.Display();
+                        Console.WriteLine(":::::::::::::::::::::::::::::::::::::::");
+                        break;
 
                     default:
                         Console.WriteLine("Please select proper option");
