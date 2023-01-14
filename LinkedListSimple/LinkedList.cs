@@ -50,7 +50,7 @@ namespace LinkedListSimple
 
         //Insert method takes two parameters to insert element in between the Node
 
-        public Node Insert(int lastNode, Node NewData)
+        public void Insert(int lastNode, Node NewData)
         {
             Node temp = head;
 
@@ -72,8 +72,22 @@ namespace LinkedListSimple
                 }
                 temp = temp.Next;
             }
-            return head;
+        }
 
+        //pop Method to delet elements from the linked list
+
+        public void pop()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("linked List is Empty");
+            }
+            else
+            {
+                Node popped = head;
+                head = head.Next;
+
+            }
         }
         //Display Method is Used to Display elements
 
