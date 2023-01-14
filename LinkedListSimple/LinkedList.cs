@@ -2,43 +2,73 @@
 
 namespace LinkedListSimple
 {
-    public class LinkedList
+    public class LinkedListData
     {
-        internal Node head;
+        //head is used as node start point
+        Node head;
         public void Add(int data)
         {
             Node node = new Node(data);
             if (this.head == null)
             {
-                this.head = node;
+                head = node;
             }
             else
             {
                 Node temp = head;
-                while (temp.next != null)
+                while (temp.Next != null)
                 {
-                    temp = temp.next;
+                    temp = temp.Next;
                 }
-                temp.next = node;
+                temp.Next = node;
             }
-            Console.WriteLine("{0} inserted into linked list ", node.data);
+            Console.WriteLine("Element added in linkedlist is : {0} ", +node.data);
+
         }
-        public void Display()
+
+        //Append Method is also used to Add Elements at last
+
+        public void Append(int data)
         {
-            Node temp = this.head;
-            if (temp == null)
+            Node node = new Node(data);
+            if (this.head == null)
             {
-                Console.WriteLine("Linked List is Empty");
-                return;
+                head = node;
             }
             else
             {
+                Node temp = head;
+                while (temp.Next != null)
+                {
+                    temp = temp.Next;
+                }
+                temp.Next = node;
+            }
+            Console.WriteLine("After Appending element to lastly added element  : {0}", data);
+
+
+        }
+
+        //Display Method is Used to Display elements
+
+        public void Display()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Linked List is Empty");
+            }
+            else
+            {
+                Console.WriteLine("Linked List contains :");
+
+                Node temp = head;
                 while (temp != null)
                 {
-                    Console.WriteLine(temp.data);
-                    temp = temp.next;
+                    Console.WriteLine(temp.data + " ");
+                    temp = temp.Next;
                 }
             }
+
         }
     }
 }
