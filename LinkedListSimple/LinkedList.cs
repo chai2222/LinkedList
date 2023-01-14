@@ -23,5 +23,22 @@ namespace LinkedListSimple
             }
             Console.WriteLine("{0} inserted into linked list ", node.data);
         }
+        public void Display()
+        {
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Linked List is Empty");
+                return;
+            }
+            else
+            {
+                while (temp != null)
+                {
+                    Console.WriteLine(temp.data);
+                    temp = temp.next;
+                }
+            }
+        }
     }
 }
